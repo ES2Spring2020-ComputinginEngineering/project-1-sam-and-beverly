@@ -7,7 +7,7 @@ import radio  # Needs to be imported separately
 
 # Change the channel if other microbits are interfering. (Default=7)
 radio.on()  # Turn on radio
-radio.config(channel=7, length =100)
+radio.config(channel=10, length =100)
 
 print('Program Started')
 mb.display.show(mb.Image.HAPPY, delay=1000, clear=True)
@@ -25,7 +25,10 @@ while True:
 
     if incoming is not None: # message was received
         mb.display.show(mb.Image.HEART, delay=100, clear=True, wait=False)
-        
+        data_acc=incoming
+        data_acc=data_acc.split()
+        data_acc=tuple(data_acc)
+        print(data_acc)
         #############################################################
         # FILL IN HERE
         # Incoming is string sent from logger
