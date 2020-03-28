@@ -28,8 +28,11 @@ while not mb.button_a.is_pressed():
     z=mb.accelerometer.get_z()
     elapsed_time=mb.running_time()-time0
     elapsed_time=elapsed_time/1000
-    message=x, y, z, elapsed_time
+    message=x,y,z,elapsed_time
     message=str(message)
+    index=len(message)
+    message=message[1:index-1]
+    message=message.replace(',',' ')
     ######################################################
     # FILL In HERE
     # Need to collect accelerometer and time measurements
@@ -37,7 +40,7 @@ while not mb.button_a.is_pressed():
     # Send the string over the radio
     ######################################################
     radio.send(message)
-    mb.sleep(500)
+    mb.sleep(55)
 
 
 

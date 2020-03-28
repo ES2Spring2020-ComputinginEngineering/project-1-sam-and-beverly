@@ -1,4 +1,4 @@
-##################
+ ##################
 # FILL IN HEADER
 #################
 
@@ -27,12 +27,18 @@ while True:
         mb.display.show(mb.Image.HEART, delay=100, clear=True, wait=False)
         data_acc=incoming
         data_acc=data_acc.split()
-        data_acc=tuple(data_acc)
-        print(data_acc)
+        data_x=data_acc[0]
+        data_x=float(data_x)
+        data_y=data_acc[1]
+        data_y=float(data_y)
+        data_z=data_acc[2]
+        data_z=float(data_z)
+        data_t=data_acc[3]
+        data_t=float(data_t)
+        print((data_x, data_y, data_z, data_t))
         #############################################################
         # FILL IN HERE
         # Incoming is string sent from logger
         # Need to parse it and reformat as a tuple for the MU plotter
         #############################################################
-
-        mb.sleep(10)
+        mb.sleep(50)

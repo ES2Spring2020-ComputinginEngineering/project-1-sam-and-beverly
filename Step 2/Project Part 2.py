@@ -16,7 +16,7 @@ def period_pendulum(length):
         period_array[counter]=period
         counter=counter+1
     return period_array
-length=[25,31,38,43,48]#in cm
+length=[25,30,37,40,46]#in cm
 print(period_pendulum(length))
 
 period_array=period_pendulum(length)
