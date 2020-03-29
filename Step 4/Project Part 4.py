@@ -11,16 +11,19 @@ def get_data(pendulum):
     pendulum_file=open(pendulum)
     for line in pendulum_file:
         counter_array=counter_array+1
-    data=np.zeros[counter_array, 4]
+    data=np.zeros([counter_array, 4])
     for line in pendulum_file:
         line=line.replace('(','')
         line=line.replace(')','')
         line=line.replace(',','')
         line=line.split()
         for i in range(4):
-            data[counter_index, i-1]=line(i)
+            value=float(line(i))
+            data[counter_index, i-1]=value
         counter_index=counter_index+1
-get_data('Pendulum Data 25cm.txt')
+    return data
+pendulum_25=get_data('Pendulum Data 25cm.txt')
+print(pendulum_25)
 #def get_data(pendulum):
     #pendulum_file=open(pendulum)
     #pendulum_data=np.loadtxt(pendulum_file)
