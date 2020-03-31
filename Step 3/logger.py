@@ -1,5 +1,6 @@
 ##################
-# FILL IN HEADER
+#Names: Sam Schrage and Beverly Vo
+#Project 1
 #################
 
 import microbit as mb

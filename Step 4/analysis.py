@@ -1,5 +1,5 @@
-# Some Code To Help with Data Logging Processing and Graphing
-# Jenn Cross
+#Names: Sam Schrage and Beverly Vo
+#Project 1
 # ******************************************************
 
 import numpy as np
