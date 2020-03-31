@@ -1,8 +1,8 @@
 #Names: Sam Schrage and Beverly Vo
 #Project 1
-Created on Mon Mar 30 15:25:28 2020
+#Created on Mon Mar 30 15:25:28 2020
 
-@author: sschr
+#@author: sschr
 """
 
 import matplotlib.pyplot as plt

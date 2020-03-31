@@ -8,15 +8,15 @@ Created on Mon Mar 30 22:04:29 2020
 import matplotlib.pyplot as plt
 import numpy as np
 import math
-import scipy
+import scipy.signal as sp
 
-def get_period(dataset, timeset):
+def get_period(dataset, timeset, Length):
     dataset=np.array(dataset)
     timeset=np.array(timeset)
-    peak, _ =scipy.signal.find_peaks(dataset)
+    peak, _ =sp.find_peaks(dataset)
     print(peak)
     plt.plot(timeset[peak], dataset[peak], 'r-')
-    plt.title('Peaks')
+    plt.title('Peaks '+ str(Length)+'cm')
     plt.tight_layout()
     plt.show()
     period=np.diff(timeset[peak])
@@ -57,14 +57,15 @@ def runsimulation(Length):
         #print_system(time[i],pos[i],vel[i])
         i += 1
         
-    period=get_period(pos,time)
-
+    Length=Length*100   
+    period=get_period(pos,time,Length)
+    
     plt.subplot(3,1,1)
     plt.plot(time, pos, 'ro--') 
 
     plt.xlabel('Time (seconds)')
     plt.ylabel('Position (Degrees)')
-    plt.title('Position vs Time')
+    plt.title('Position vs Time '+ str(Length)+'cm')
     plt.xlim((0, 35)) # set x range to -1 to 8
     plt.grid()
 
@@ -73,7 +74,7 @@ def runsimulation(Length):
     plt.plot(time, vel, 'ro--') 
     plt.xlabel('Time (seconds)')
     plt.ylabel('Velocity (degrees/s)')
-    plt.title('Velocity vs Time')
+    plt.title('Velocity vs Time '+ str(Length)+'cm')
     plt.xlim((0, 35)) # set x range to -1 to 8
     plt.grid()
 
@@ -82,7 +83,7 @@ def runsimulation(Length):
     plt.plot(time, acc, 'ro--') 
     plt.xlabel('Time (seconds)')
     plt.ylabel('Acceleration (degrees/s^2)')
-    plt.title('Acceleration vs Time')
+    plt.title('Acceleration vs Time '+ str(Length)+'cm')
     plt.xlim((0, 35)) # set x range to -1 to 8
     plt.grid()
     plt.tight_layout()
